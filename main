@@ -1,0 +1,117 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Mail, Linkedin, Github, Download } from "lucide-react";
+
+export default function Portfolio() {
+  const projects = [
+    {
+      title: "Cyber Insurance Pricing - India Fellowship Seminar",
+      description: "Explored pricing, product challenges, and market landscape for cyber insurance in India.",
+      category: "Insurance"
+    },
+    {
+      title: "China ES Analysis Tool",
+      description: "R Shiny dashboard for lapse and claims trend analysis across various risk factors with user-selectable filters and visualizations.",
+      category: "Analytics"
+    }
+  ];
+
+  const skills = ["R", "Python", "R Shiny", "SAS", "Java", "C", "C++", "Shell Scripting", "MS Office", "Google Suite"];
+
+  const awards = [
+    "Actuarial Fellowship completed in under 4 years",
+    "Rising Star Award - Swiss Re (2024)",
+    "Pat on the Back Award - Swiss Re (2024)",
+    "Rockstar Award - China ES Tool (2022)"
+  ];
+
+  const volunteering = [
+    "Visiting Faculty – SSSIHL: Teaching actuarial science projects",
+    "Secretary – SwaR Toastmasters Club (2023–2024)",
+    "Village Outreach Program Volunteer (2014–2020)"
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-50 p-4 md:p-8">
+      <header className="text-center mb-12">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-800">Naga Teja Mariyala, FIAI</h1>
+        <p className="text-base md:text-lg text-gray-600">Senior Actuarial Analyst | Reinsurance Pricing | Data Science Enthusiast</p>
+        <div className="flex justify-center flex-wrap gap-4 mt-4">
+          <a href="mailto:mariyalanagateja@gmail.com" aria-label="Email">
+            <Mail className="w-5 h-5 text-gray-600 hover:text-black" />
+          </a>
+          <a href="http://linkedin.com/in/nagatejamariyala" target="_blank" aria-label="LinkedIn">
+            <Linkedin className="w-5 h-5 text-gray-600 hover:text-black" />
+          </a>
+          <a href="https://github.com/NagaTejaMariyala" target="_blank" aria-label="GitHub">
+            <Github className="w-5 h-5 text-gray-600 hover:text-black" />
+          </a>
+          <a href="/resume.pdf" download aria-label="Download Resume">
+            <Download className="w-5 h-5 text-gray-600 hover:text-black" />
+          </a>
+        </div>
+      </header>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">About Me</h2>
+        <p className="text-gray-700 leading-relaxed">
+          Experienced actuarial analyst with a demonstrated history of working in the reinsurance industry. Passionate about pricing, predictive analytics, and actuarial data science, with strong programming experience in R, Python, and R Shiny. Award-winning contributor at Swiss Re with a keen interest in cyber insurance, underwriting tools, and mentoring.
+        </p>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Skills</h2>
+        <ul className="flex flex-wrap gap-3 text-sm text-white">
+          {skills.map(skill => (
+            <li key={skill} className="bg-blue-600 rounded-full px-3 py-1">{skill}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Experience</h2>
+        <div className="space-y-4">
+          <Card><CardContent className="p-4"><h3 className="font-semibold text-lg">Senior Actuarial Analyst - Swiss Re</h3><p className="text-sm text-gray-500">Nov 2023 – Present</p><ul className="list-disc ml-6 mt-2 text-sm text-gray-700 space-y-1"><li>Maintained pricing tools with complex actuarial methods.</li><li>Collaborated on strategic reinsurance treaty development.</li><li>Programmed new actuarial models into tools.</li><li>Led tool governance and actuarial reviews.</li></ul></CardContent></Card>
+          <Card><CardContent className="p-4"><h3 className="font-semibold text-lg">Actuarial Analyst - Swiss Re</h3><p className="text-sm text-gray-500">Jun 2021 – Oct 2023</p><ul className="list-disc ml-6 mt-2 text-sm text-gray-700 space-y-1"><li>Led experience studies for the China health market.</li><li>Built GLMs and dashboards using R & R Shiny.</li><li>Automated models and collaborated on data quality.</li></ul></CardContent></Card>
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Projects</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {projects.map(project => (
+            <Card key={project.title}><CardContent className="p-4"><h3 className="font-semibold text-lg">{project.title}</h3><p className="text-sm text-gray-700">{project.description}</p></CardContent></Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Education & Certifications</h2>
+        <ul className="list-disc ml-6 text-gray-700 space-y-2">
+          <li>Fellow Member, Institute of Actuaries of India (FIAI), 2024</li>
+          <li>M.Sc. in Mathematics (Actuarial Science) – SSSIHL, 2021</li>
+          <li>B.Sc. (Hons) in Mathematics – SSSIHL, 2019</li>
+          <li>Associate Data Scientist – Datacamp, 2024</li>
+        </ul>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Awards</h2>
+        <ul className="list-disc ml-6 text-gray-700 space-y-2">
+          {awards.map((award, idx) => <li key={idx}>{award}</li>)}
+        </ul>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Volunteering</h2>
+        <ul className="list-disc ml-6 text-gray-700 space-y-2">
+          {volunteering.map((item, idx) => <li key={idx}>{item}</li>)}
+        </ul>
+      </section>
+
+      <footer className="text-center text-sm text-gray-500 border-t pt-4">
+        &copy; {new Date().getFullYear()} Naga Teja Mariyala. All rights reserved.
+      </footer>
+    </div>
+  );
+}
